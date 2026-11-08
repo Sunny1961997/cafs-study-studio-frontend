@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 import {
   api,
   clearSession,
@@ -20,15 +20,18 @@ export default function AdminPage() {
   const [inviteUrl, setInviteUrl] = useState("");
   const [notice, setNotice] = useState("");
   const [pending, setPending] = useState(false);
-  const [accountName, setAccountName] = useState("");
+  // Cached account is read from localStorage; server render and first paint use "".
+  const accountName = useSyncExternalStore(
+    () => () => {},
+    () => getCachedAccount()?.name ?? "",
+    () => "",
+  );
 
   useEffect(() => {
     if (!getToken()) {
       router.replace("/login");
       return;
     }
-
-    setAccountName(getCachedAccount()?.name ?? "");
 
     api<{ enrollments: Enrollment[] }>("/api/admin/enrollments")
       .then((data) => setRows(data.enrollments))

@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "studio:extract": "node scripts/extract-studio-data.mjs",
+    "studio:assets": "node scripts/extract-studio-assets.mjs",
+    "studio:labels": "node scripts/extract-studio-labels.mjs"
   },
   "dependencies": {
     "axios": "^1.21.0",
