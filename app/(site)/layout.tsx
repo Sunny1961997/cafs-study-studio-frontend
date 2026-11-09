@@ -4,6 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "CAFS Study Studio",
   description: "Fraud Intelligence Academy study studio",
+  icons: null,
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
