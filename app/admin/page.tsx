@@ -5,11 +5,11 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import {
   api,
-  clearSession,
   downloadEnrollmentCsv,
   errorText,
   getCachedAccount,
   getToken,
+  logout,
   type Enrollment,
 } from "@/lib/api";
 
@@ -78,8 +78,7 @@ export default function AdminPage() {
           className="desk-link"
           type="button"
           onClick={() => {
-            clearSession();
-            router.replace("/login");
+            void logout().then(() => router.replace("/login"));
           }}
         >
           Sign out

@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { clearSession, errorText, fetchStudioDocument, getToken } from "@/lib/api";
+import { clearSession, errorText, fetchStudioDocument, getToken, logout } from "@/lib/api";
 
 export default function StudioPage() {
   const router = useRouter();
@@ -34,11 +34,7 @@ export default function StudioPage() {
       const frame = document.querySelector("iframe.studio-frame");
       if (!frame || event.source !== frame.contentWindow) return;
       if (event.data?.type === "cafs-signout") {
-        clearSession();
-        router.replace("/login");
-      }
-      if (event.data?.type === "cafs-admin") {
-        router.push("/admin");
+        void logout().then(() => router.replace("/login"));
       }
     }
 

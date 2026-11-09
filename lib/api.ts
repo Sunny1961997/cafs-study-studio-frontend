@@ -69,6 +69,15 @@ export function clearSession() {
   localStorage.removeItem(USER_KEY);
 }
 
+export async function logout(): Promise<void> {
+  try {
+    if (getToken()) await api("/api/logout", { method: "POST" });
+  } catch {
+    // The local session still has to end if the server is unreachable.
+  }
+  clearSession();
+}
+
 export async function api<T>(path: string, options: RequestInit = {}): Promise<T> {
   const headers = new Headers(options.headers);
   headers.set("Accept", "application/json");
