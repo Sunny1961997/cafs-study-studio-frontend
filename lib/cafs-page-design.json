@@ -1,0 +1,535 @@
+{
+  "schemaVersion": "1.1",
+  "project": {
+    "name": "FCL Academy | CAFS Study Studio",
+    "type": "Framework-neutral page design and content configuration",
+    "locale": "en",
+    "publicOrigin": "https://academy.financialcrimelab.com",
+    "sourcePrototype": "CAFS_Study_Studio_v22_Integrated.html",
+    "entryPoint": {
+      "source": "Financial Crime Lab → FCL Academy → CAFS → Explore",
+      "destinationPageId": "cafs-landing"
+    },
+    "externalLinks": {
+      "fclHome": "https://financialcrimelab.com/",
+      "studentLogin": "https://academy.financialcrimelab.com/login",
+      "support": "mailto:info@financialcrimelab.com",
+      "privacy": "https://financialcrimelab.com/privacy-policy/"
+    }
+  },
+  "designSystem": {
+    "direction": "Bright white and soft blue, with ink-navy typography and the saturated blue from the FCL Academy navigation.",
+    "colors": {
+      "page": "#FFFFFF",
+      "surface": "#FFFFFF",
+      "surfaceTint": "#F3F7FF",
+      "text": "#14213D",
+      "textSubtle": "#495974",
+      "accent": "#174ED1",
+      "accentHover": "#123FAB",
+      "onAccent": "#FFFFFF",
+      "border": "#D8E3F7",
+      "focus": "#174ED1",
+      "successSurface": "#EAF7EE",
+      "successText": "#176039",
+      "feedbackSurface": "#EEF4FF"
+    },
+    "typography": {
+      "heading": "Manrope, Arial, sans-serif",
+      "body": "Instrument Sans, Arial, sans-serif",
+      "headingWeight": 800,
+      "bodyWeight": 400,
+      "actionWeight": 700,
+      "h1SizePx": {
+        "mobile": 36,
+        "tablet": 44,
+        "desktop": 56
+      },
+      "h2SizePx": {
+        "mobile": 26,
+        "tablet": 32,
+        "desktop": 36
+      },
+      "bodySizePx": 16,
+      "bodyLineHeight": 1.55
+    },
+    "layout": {
+      "containerMaxPx": 1200,
+      "breakpointsPx": {
+        "tablet": 768,
+        "desktop": 1024
+      },
+      "pageGutterPx": {
+        "mobile": 20,
+        "tablet": 32,
+        "desktop": 48
+      },
+      "sectionPaddingYPx": {
+        "mobile": 48,
+        "tablet": 64,
+        "desktop": 80
+      },
+      "gridGapPx": 24,
+      "cardRadiusPx": 16,
+      "buttonRadiusPx": 8,
+      "minInteractiveHeightPx": 44
+    }
+  },
+  "course": {
+    "name": "CAFS Exam Preparation Course",
+    "credentialLabel": "Certified Anti-Fraud Specialist (CAFS)",
+    "delivery": "Self-paced online study",
+    "summary": "Study the three CAFS domains in order, use flashcards and revision briefs to recall key concepts, then take full mocks and revisit your weak topics.",
+    "practiceCounts": {
+      "domains": 3,
+      "curriculumTopics": 12,
+      "mockExams": 7,
+      "questionsPerMock": 100,
+      "domainAssessments": 3,
+      "questionsPerDomainAssessment": 100,
+      "chapterFlashcards": 144,
+      "caseStudies": 39
+    },
+    "domains": [
+      {
+        "id": "fraud-risk-management",
+        "order": 1,
+        "title": "Building a Fraud Risk Management Program",
+        "description": "Understand fraud risk, build a management framework, and work through prevention, detection, and response decisions.",
+        "topics": [
+          "Introduction to Fraud Risk Management",
+          "Fraud Risk Management Framework",
+          "Fraud Prevention and Detection",
+          "Fraud Response and Remediation"
+        ]
+      },
+      {
+        "id": "fraud-detection-analytics",
+        "order": 2,
+        "title": "Fraud Detection and Analytics",
+        "description": "Follow the detection process from collecting and preparing data to using analytics and implementing detection systems.",
+        "topics": [
+          "Introduction to Fraud Analytics",
+          "Data Collection and Preparation",
+          "Data Analytics",
+          "Implementing a Fraud Detection System"
+        ]
+      },
+      {
+        "id": "fraud-investigations",
+        "order": 3,
+        "title": "Fraud Investigations",
+        "description": "Recognize fraud typologies, gather evidence, and work through investigation closure.",
+        "topics": [
+          "Introduction to Fraud Investigations",
+          "Fraud Typologies",
+          "Gathering Evidence",
+          "Investigation Closure"
+        ]
+      }
+    ],
+    "studyTools": [
+      {
+        "id": "study-notes",
+        "title": "Chapter Summaries and Detailed Notes",
+        "description": "Follow the curriculum in order and use handbook mapping to locate topics for further study."
+      },
+      {
+        "id": "recall",
+        "title": "Flashcards and Revision Briefs",
+        "description": "Use active recall to review key terms, rules, and distinctions."
+      },
+      {
+        "id": "cases",
+        "title": "Fraud Case Studies",
+        "description": "Apply the concepts to case examples and review the decisions and lessons."
+      },
+      {
+        "id": "practice",
+        "title": "Timed Drills and Full Mock Exams",
+        "description": "Practice by domain and test your reasoning across the curriculum."
+      },
+      {
+        "id": "adaptive-revision",
+        "title": "Targeted Revision",
+        "description": "Use your practice results to find weak topics and choose what to review next."
+      }
+    ],
+    "accessBundles": {
+      "full-studio": {
+        "label": "Full CAFS Study Studio Access",
+        "studyToolIds": [
+          "study-notes",
+          "recall",
+          "cases",
+          "practice",
+          "adaptive-revision"
+        ],
+        "includesAllDomains": true
+      }
+    }
+  },
+  "pricing": {
+    "currency": "USD",
+    "amountUnit": "minor currency units",
+    "plans": [
+      {
+        "id": "tier-1",
+        "name": "1-Month Access",
+        "displayOrder": 1,
+        "priceMinor": 1999,
+        "billingType": "one_time",
+        "duration": {
+          "unit": "calendar_month",
+          "value": 1,
+          "startsAt": "access_activation"
+        },
+        "accessBundleId": "full-studio",
+        "billingLabel": "One-time payment",
+        "accessLabel": "1 month of full access",
+        "description": "For a focused review before your exam.",
+        "checkoutButtonLabel": "Choose 1-Month Access",
+        "tierLabel": "Tier 1"
+      },
+      {
+        "id": "tier-2",
+        "name": "3-Month Access",
+        "tierLabel": "Tier 2",
+        "displayOrder": 2,
+        "priceMinor": 4999,
+        "billingType": "one_time",
+        "duration": {
+          "unit": "calendar_month",
+          "value": 3,
+          "startsAt": "access_activation"
+        },
+        "accessBundleId": "full-studio",
+        "billingLabel": "One-time payment",
+        "accessLabel": "3 months of full access",
+        "description": "For working through all three domains and taking multiple mocks.",
+        "checkoutButtonLabel": "Choose 3-Month Access"
+      },
+      {
+        "id": "tier-3",
+        "name": "Full Access",
+        "tierLabel": "Tier 3",
+        "displayOrder": 3,
+        "priceMinor": 6999,
+        "billingType": "one_time",
+        "duration": null,
+        "accessBundleId": "full-studio",
+        "billingLabel": "One-time payment",
+        "accessLabel": "Full access with no fixed expiry date",
+        "description": "For learners who want to prepare on an open-ended schedule.",
+        "checkoutButtonLabel": "Choose Full Access"
+      }
+    ],
+    "featuredPlanId": "tier-2",
+    "checkout": {
+      "enabled": false,
+      "urlsByPlanId": {
+        "tier-1": null,
+        "tier-2": null,
+        "tier-3": null
+      },
+      "disabledMessage": "Online enrollment is coming soon.",
+      "prelaunchAction": {
+        "label": "Ask About Enrollment",
+        "externalLinkId": "support"
+      },
+      "liveActionRule": "Render an active plan checkout button only when checkout is enabled and that plan has a valid HTTPS checkout URL. Otherwise show the prelaunch action and availability message once below the plan cards."
+    }
+  },
+  "practiceDemo": {
+    "id": "supplier-verification",
+    "title": "Verify a Supplier Request",
+    "label": "Free Practice Question",
+    "scenario": "An email appearing to come from a supplier requests a bank account change just before a scheduled payment.",
+    "question": "What should the payments team do first?",
+    "options": [
+      {
+        "id": "reply",
+        "label": "Reply to the email and ask for confirmation."
+      },
+      {
+        "id": "verify",
+        "label": "Pause the change and call the supplier using a verified number already on file."
+      },
+      {
+        "id": "approve",
+        "label": "Make the change if the email includes a valid invoice number."
+      }
+    ],
+    "correctOptionId": "verify",
+    "checkLabel": "Check Answer",
+    "feedback": {
+      "empty": "Choose an answer first.",
+      "correct": "Correct.",
+      "incorrect": "The best answer is to pause the change and call the supplier using a verified number.",
+      "explanation": "A call to the number on file verifies the request independently. Replying uses the same potentially compromised email channel. An invoice number alone cannot verify the request."
+    },
+    "behavior": "Use native radio buttons. On submit, show the verdict and explanation in a polite live region. Clear stale feedback when the selection changes. Keep the interaction local to this page."
+  },
+  "sharedComponents": {
+    "header": {
+      "brandLabel": "FCL Academy",
+      "brandExternalLinkId": "fclHome",
+      "links": [
+        {
+          "label": "Curriculum",
+          "pageId": "cafs-landing",
+          "anchorId": "curriculum"
+        },
+        {
+          "label": "Plans",
+          "pageId": "cafs-pricing"
+        },
+        {
+          "label": "Student Login",
+          "externalLinkId": "studentLogin",
+          "style": "secondary"
+        }
+      ],
+      "mobileBehavior": "Keep Student Login visible. Place the other navigation links in an accessible disclosure if they cannot fit."
+    },
+    "footer": {
+      "brandLabel": "Financial Crime Lab",
+      "links": [
+        {
+          "label": "Privacy Policy",
+          "externalLinkId": "privacy"
+        },
+        {
+          "label": "Contact FCL Academy",
+          "externalLinkId": "support"
+        }
+      ],
+      "courseNote": "CAFS Study Studio is an independent exam preparation resource from Financial Crime Lab."
+    }
+  },
+  "pages": [
+    {
+      "id": "cafs-landing",
+      "path": "/cafs",
+      "metadata": {
+        "title": "CAFS Exam Preparation Course | FCL Academy",
+        "description": "Prepare for the CAFS exam with chapter summaries, flashcards, revision briefs, case studies, timed drills, and seven full mock exams."
+      },
+      "sections": [
+        {
+          "id": "course-overview",
+          "component": "SplitHero",
+          "surface": "surfaceTint",
+          "layout": {
+            "mobile": "copy_then_demo",
+            "tablet": "copy_then_demo",
+            "desktop": "copy_beside_demo"
+          },
+          "labelFrom": "course.credentialLabel",
+          "heading": "Prepare for the CAFS Exam",
+          "bodyFrom": "course.summary",
+          "actions": [
+            {
+              "label": "View Plans",
+              "pageId": "cafs-pricing",
+              "style": "primary"
+            },
+            {
+              "label": "Try a Free Question",
+              "anchorId": "free-question",
+              "style": "secondary"
+            }
+          ],
+          "secondaryPanel": {
+            "id": "free-question",
+            "component": "PracticeQuestion",
+            "dataFrom": "practiceDemo"
+          }
+        },
+        {
+          "id": "course-at-a-glance",
+          "component": "CourseFacts",
+          "facts": [
+            {
+              "valueFrom": "course.practiceCounts.mockExams",
+              "label": "Full mock exams"
+            },
+            {
+              "valueFrom": "course.practiceCounts.domainAssessments",
+              "label": "Domain assessments"
+            },
+            {
+              "valueFrom": "course.practiceCounts.chapterFlashcards",
+              "label": "Chapter flashcards"
+            },
+            {
+              "valueFrom": "course.practiceCounts.caseStudies",
+              "label": "Case studies"
+            }
+          ],
+          "columns": {
+            "mobile": 2,
+            "tablet": 4,
+            "desktop": 4
+          }
+        },
+        {
+          "id": "curriculum",
+          "component": "DomainAccordion",
+          "heading": "Course Curriculum",
+          "body": "Explore three domains and 12 topics, from building a fraud risk program to closing an investigation.",
+          "itemsFrom": "course.domains",
+          "initialOpenItemId": "fraud-risk-management"
+        },
+        {
+          "id": "study-tools",
+          "component": "FeatureGrid",
+          "heading": "What You’ll Study With",
+          "itemsFrom": "course.studyTools",
+          "columns": {
+            "mobile": 1,
+            "tablet": 2,
+            "desktop": 3
+          }
+        },
+        {
+          "id": "course-faq",
+          "component": "FaqAccordion",
+          "heading": "Course FAQs",
+          "items": [
+            {
+              "question": "Can I study at my own pace?",
+              "answer": "Yes. Work through the domains in order or return to a topic you want to revisit."
+            },
+            {
+              "question": "What does a practice exam include?",
+              "answer": "Each full mock and domain assessment contains 100 questions. After a mock, review your results and the answer explanations."
+            },
+            {
+              "question": "Can I try the course before choosing a plan?",
+              "answer": "Yes. The free scenario question on this page includes immediate feedback."
+            }
+          ]
+        },
+        {
+          "id": "course-plans",
+          "component": "CallToAction",
+          "surface": "surfaceTint",
+          "heading": "Choose Your Study Access",
+          "body": "Every plan includes all three domains, study materials, and full mock exams.",
+          "action": {
+            "label": "Compare Plans",
+            "pageId": "cafs-pricing",
+            "style": "primary"
+          }
+        }
+      ]
+    },
+    {
+      "id": "cafs-pricing",
+      "path": "/cafs/pricing",
+      "metadata": {
+        "title": "CAFS Study Studio Pricing | FCL Academy",
+        "description": "Compare 1-month, 3-month, and Full Access plans for the CAFS Study Studio."
+      },
+      "sections": [
+        {
+          "id": "pricing-overview",
+          "component": "PageIntro",
+          "surface": "surfaceTint",
+          "heading": "Choose Your CAFS Study Plan",
+          "body": "Every plan includes the complete CAFS Study Studio. Choose the access period that fits your exam schedule.",
+          "backLink": {
+            "label": "Back to Course",
+            "pageId": "cafs-landing"
+          }
+        },
+        {
+          "id": "plan-options",
+          "component": "PlanCards",
+          "itemsFrom": "pricing.plans",
+          "featuredPlanIdFrom": "pricing.featuredPlanId",
+          "currencyFrom": "pricing.currency",
+          "checkoutFrom": "pricing.checkout",
+          "priceFormat": "Format USD from cents with two decimal places and the US$ prefix.",
+          "columns": {
+            "mobile": 1,
+            "tablet": 1,
+            "desktop": 3
+          },
+          "cardContentOrder": [
+            "tierLabel",
+            "name",
+            "price",
+            "billingLabel",
+            "accessLabel",
+            "description",
+            "checkoutAction"
+          ],
+          "featuredStyle": "Use an accent border and pale blue surface on the featured card."
+        },
+        {
+          "id": "included-in-every-plan",
+          "component": "FeatureList",
+          "heading": "Included in Every Plan",
+          "itemsFrom": "course.studyTools"
+        },
+        {
+          "id": "pricing-faq",
+          "component": "FaqAccordion",
+          "heading": "Access FAQs",
+          "items": [
+            {
+              "question": "Do the plans include different study materials?",
+              "answer": "All three plans include the full CAFS Study Studio, including study materials, revision tools, and mock exams."
+            },
+            {
+              "question": "Do the 1-month and 3-month plans renew?",
+              "answer": "Both are one-time purchases. Access begins when your account is activated and ends when the purchased access period expires."
+            },
+            {
+              "question": "What does Full Access mean?",
+              "answer": "Full Access is a one-time purchase with no fixed expiry date."
+            },
+            {
+              "question": "Where do I go if I already have an account?",
+              "answer": "Open Student Login to access your Study Studio account.",
+              "action": {
+                "label": "Student Login",
+                "externalLinkId": "studentLogin"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "implementation": {
+    "rendering": "Pages render shared header, sections in array order, and shared footer. Resolve fields ending in From as dot paths from the JSON root. Resolve pageId to its page path and append anchorId when applicable. Anchor-only actions target the current page. Resolve externalLinkId through project.externalLinks.",
+    "accessibility": [
+      "Use one H1 on each page and semantic headings for sections.",
+      "Use native details and summary elements for curriculum and FAQs. Keep visible keyboard focus.",
+      "Make all links and controls operable using a keyboard. Maintain the supplied minimum interactive height.",
+      "At narrow widths, stack the hero and plan cards and allow copy and labels to wrap."
+    ],
+    "previewAndLaunch": [
+      "Render marketing pages and the public practice sample using this file.",
+      "Keep checkout in the prelaunch state until valid links exist. Student Login links directly to the existing Academy login.",
+      "Reserve space for approved payment and refund terms only when those terms are finalized."
+    ],
+    "assumptions": [
+      "USD display currency carries forward from the previous pricing proposal.",
+      "The stated prices are modeled as one-time purchases, including 1-Month Access.",
+      "Tier 3 full-time access is shown as no fixed expiry date.",
+      "All three plans unlock the same course materials. Tier 2 is highlighted as the recommended access window.",
+      "The pricing URL is proposed. The existing Studio login is linked from both pages."
+    ],
+    "acceptanceChecks": [
+      "The CAFS Explore entry opens /cafs, and View Plans opens /cafs/pricing.",
+      "Plan cards show Tier 1 at US$19.99 for 1 month, Tier 2 at US$49.99 for 3 months, and Tier 3 at US$69.99 for Full Access.",
+      "With checkout disabled, all plans remain visible and the prelaunch message and support link are shown once.",
+      "The practice question provides feedback for no selection, a correct answer, and an incorrect answer.",
+      "At 320px, 768px, and 1280px, navigation and content remain usable without horizontal clipping."
+    ]
+  }
+}
