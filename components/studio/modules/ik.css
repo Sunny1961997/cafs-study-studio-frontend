@@ -1,0 +1,175 @@
+.cafs-ik{--bg:#f6f8fb;--ink:#19314c;--text:#32465b;--muted:#677e91;--line:#dce7ed;--sea:#087d77;--sea2:#dff6ed;--blue:#2362a0;--white:#fff;--navy:#102941;--shadow:0 8px 28px #18415c0a}
+.cafs-ik *{box-sizing:border-box}
+.cafs-ik{scroll-behavior:smooth}
+.cafs-ik{background:var(--bg);color:var(--text);margin:0;font:15px/1.55 system-ui,-apple-system,'Segoe UI',Arial,sans-serif}
+.cafs-ik button,.cafs-ik input,.cafs-ik select{font:inherit}
+.cafs-ik button{cursor:pointer}
+.cafs-ik button:disabled{cursor:not-allowed;opacity:.52}
+.cafs-ik h1,.cafs-ik h2,.cafs-ik h3,.cafs-ik h4{line-height:1.24;color:var(--ink)}
+.cafs-ik h2{font-size:25px;letter-spacing:-.03em}
+.cafs-ik h3{font-size:17px}
+.cafs-ik p{margin:8px 0 13px}
+.cafs-ik button:focus-visible,.cafs-ik input:focus-visible,.cafs-ik select:focus-visible{outline:3px solid #95cdd0;outline-offset:1px}
+.cafs-ik .wrap{max-width:1310px;margin:auto;padding:0 22px}
+.cafs-ik .head{background:white;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+.cafs-ik .head-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:65px}
+.cafs-ik .brand{display:flex;align-items:center;gap:12px;font-weight:800;color:var(--ink);font-size:16px;letter-spacing:-.02em}
+.cafs-ik .logo{width:37px;height:37px;border-radius:12px;color:#fff;background:#114d64;display:grid;place-items:center;font-size:11px;letter-spacing:0}
+.cafs-ik .head small{color:var(--muted)}
+.cafs-ik .hero{background:linear-gradient(110deg,#f2fafb 0%,#e9f8f4 70%,#e1f6ef);border-bottom:1px solid #d5ebe6;padding:29px 0 26px}
+.cafs-ik .hero .eyebrow{font-size:11px;color:#087e79;font-weight:800;letter-spacing:.11em;text-transform:uppercase}
+.cafs-ik .hero h1{font-size:clamp(26px,3.5cqw,42px);letter-spacing:-.045em;margin:5px 0 8px;max-width:880px}
+.cafs-ik .hero p{color:#4e6c79;max-width:800px;margin:0;font-size:14px}
+.cafs-ik .stats{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+.cafs-ik .stat{background:#fff;border:1px solid #dce8eb;border-radius:12px;padding:10px 16px;min-width:132px}
+.cafs-ik .stat strong{font-size:22px;color:#0d726b;display:block;line-height:1.1}
+.cafs-ik .stat span{font-size:11px;color:var(--muted)}
+.cafs-ik .tabs{display:flex;flex-wrap:wrap;gap:7px;margin:20px 0}
+.cafs-ik .tab{border:1px solid var(--line);border-radius:10px;background:#fff;padding:10px 16px;color:#415e75;font-size:13px;font-weight:700}
+.cafs-ik .tab.active{background:#164b62;color:#fff;border-color:#164b62}
+.cafs-ik .page{display:none;min-height:500px;padding-bottom:60px}
+.cafs-ik .page.active{display:block}
+.cafs-ik .grid-lesson{display:grid;grid-template-columns:316px minmax(0,1fr);align-items:start;gap:18px}
+.cafs-ik .panel{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:22px}
+.cafs-ik .sidebar{position:sticky;top:86px;max-height:calc(100vh - 103px);display:flex;flex-direction:column;gap:10px;padding:17px}
+.cafs-ik .sidebar .list{overflow-y:auto;min-height:160px}
+.cafs-ik .field{border:1px solid #d7e3ea;background:#fff;border-radius:9px;padding:10px 11px;width:100%;color:#2c455c;font-size:13px;min-height:42px}
+.cafs-ik .filter-row{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.cafs-ik .lesson-list-btn{display:flex;text-align:left;gap:10px;align-items:flex-start;background:transparent;border:1px solid transparent;width:100%;border-radius:9px;padding:11px 9px}
+.cafs-ik .lesson-list-btn:hover{background:#f3f9fa}
+.cafs-ik .lesson-list-btn.active{background:#e9f7f2;border-color:#acd9ce}
+.cafs-ik .number{color:#0b8176;background:#e9f4f1;border-radius:8px;padding:3px 5px;min-width:40px;text-align:center;font-size:11px;font-weight:850}
+.cafs-ik .lesson-list-btn strong{display:block;font-size:12px;color:#29425a;line-height:1.4}
+.cafs-ik .lesson-list-btn small{color:#7890a1;font-size:10px}
+.cafs-ik .progress{height:9px;background:#e7eff3;border-radius:20px;overflow:hidden}
+.cafs-ik .progress div{height:100%;background:#0eac9c;transition:width .3s}
+.cafs-ik .tiny{color:var(--muted);font-size:12px}
+.cafs-ik .label{font-size:10px;letter-spacing:.08em;color:#08786e;text-transform:uppercase;font-weight:850}
+.cafs-ik .subtle{color:var(--muted)}
+.cafs-ik .lesson-view{min-width:0}
+.cafs-ik .lesson-view .panel{margin-bottom:14px}
+.cafs-ik .lesson-header h2{font-size:clamp(24px,2.6cqw,32px);margin:8px 0 10px}
+.cafs-ik .chips{display:flex;flex-wrap:wrap;gap:6px}
+.cafs-ik .chip{font-size:11px;border-radius:7px;padding:5px 8px;background:#edf3f7;color:#4a6479;font-weight:700}
+.cafs-ik .chip.teal{background:#dff4eb;color:#0c736b}
+.cafs-ik .buttons{display:flex;gap:7px;flex-wrap:wrap}
+.cafs-ik .btn{border:1px solid #0b827b;border-radius:9px;padding:9px 13px;font-size:12px;font-weight:750;background:#087e77;color:#fff}
+.cafs-ik .btn.outline{color:#087e77;background:#fff}
+.cafs-ik .btn.grey{color:#3a566e;background:#f6f9fa;border-color:#dce7ed}
+.cafs-ik .info-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px;margin:15px 0}
+.cafs-ik .info{border:1px solid #e0ebef;border-radius:11px;background:#f7fafb;padding:13px}
+.cafs-ik .info strong{font-size:12px;color:#1d485d;display:block}
+.cafs-ik .info p{font-size:12px;color:#4f6478;margin:5px 0}
+.cafs-ik .info .pageno{color:#067d77;font-size:11px;font-weight:800;display:block;margin:5px 0}
+.cafs-ik .sourceheads{font-size:10px;color:#6c8696}
+.cafs-ik .note-list{display:grid;gap:9px;margin:14px 0}
+.cafs-ik .note{display:flex;gap:12px;align-items:start;border:1px solid #e0eced;background:#fbfefd;padding:13px;border-radius:11px;font-size:13px}
+.cafs-ik .note i{font-style:normal;background:#dff5ed;color:#0d746e;font-size:12px;font-weight:800;padding:3px 7px;border-radius:7px}
+.cafs-ik .case{background:#f0faf7;border:1px solid #c8e7d9;border-radius:12px;padding:18px;margin:16px 0}
+.cafs-ik .case strong{color:#0a6e66}
+.cafs-ik .case p{font-size:13px}
+.cafs-ik .decision{background:#fff;border:1px solid #bfdbdc;border-left:4px solid #169d8e;border-radius:7px;padding:12px;font-size:13px}
+.cafs-ik .traps{margin:0;padding-left:18px}
+.cafs-ik .traps li{font-size:12.5px;color:#5b6270;margin-bottom:7px}
+.cafs-ik .compact-columns{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.cafs-ik .compact-columns>div{border:1px solid var(--line);border-radius:11px;padding:14px}
+.cafs-ik .sectiontitle{margin:18px 0 10px;font-size:16px}
+.cafs-ik .linkpill{display:inline-block;border:1px solid #cbe2e3;border-radius:8px;background:#f5fbfb;color:#0c6c6b;font-size:12px;margin:4px 5px 2px 0;padding:7px 10px}
+.cafs-ik .extended{background:#f6f9fc;border:1px solid #e2e9ef;padding:13px 15px;border-radius:11px;margin:9px 0}
+.cafs-ik .extended h4{margin:0 0 8px;font-size:13px}
+.cafs-ik .extended li{font-size:12px;margin:5px 0}
+.cafs-ik .question{padding:18px;border:1px solid #dde8eb;border-radius:12px;background:white;margin:10px 0}
+.cafs-ik .question h4{font-size:13.5px;line-height:1.5;margin:8px 0 12px}
+.cafs-ik .choice{display:flex;align-items:flex-start;gap:10px;padding:8px;border-radius:7px;border:1px solid transparent;font-size:12.5px;line-height:1.5;cursor:pointer}
+.cafs-ik .choice:hover{background:#f2faf8}
+.cafs-ik .choice input{accent-color:#0b847d;margin-top:3px;flex:none}
+.cafs-ik .choice.correct{background:#e9f8ed;border-color:#a0d5ae}
+.cafs-ik .choice.wrong{background:#fff0ef;border-color:#edbab8}
+.cafs-ik .q-result{margin-top:9px;border-radius:8px;background:#f1f7f8;padding:10px;font-size:12px;color:#344e60}
+.cafs-ik .q-result strong{color:#137b6e}
+.cafs-ik .exam-controls{display:flex;flex-wrap:wrap;gap:9px;margin:15px 0}
+.cafs-ik .exam-controls .field{width:auto;min-width:150px}
+.cafs-ik .exam-list{max-width:980px}
+.cafs-ik .test-nav{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;margin:15px 0}
+.cafs-ik .info-message{padding:13px;border-radius:10px;background:#f3f8fa;border:1px solid #dbe9ed;color:#536a79;font-size:13px}
+.cafs-ik .score{font-size:30px;color:#0c8073;font-weight:850}
+.cafs-ik .map-filters{display:flex;flex-wrap:wrap;gap:8px}
+.cafs-ik .map-filters .field{max-width:340px}
+.cafs-ik .map-vis{background:#fcfefe;border:1px solid #d9e6eb;border-radius:15px;margin-top:13px;overflow:hidden;position:relative}
+.cafs-ik .map-vis svg{width:100%;height:auto;display:block;max-height:530px}
+.cafs-ik .graph-node{cursor:pointer}
+.cafs-ik .graph-node:focus{outline:none}
+.cafs-ik .graph-node:hover circle{stroke:#06a293;stroke-width:4}
+.cafs-ik .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:#60798b}
+.cafs-ik .legend b{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px}
+.cafs-ik .matrix{width:100%;border-collapse:collapse;font-size:12px}
+.cafs-ik .matrix th{position:sticky;top:65px;background:#f4f8fa;color:#425d74;text-align:left;padding:9px;border-bottom:1px solid var(--line)}
+.cafs-ik .matrix td{padding:11px 8px;border-bottom:1px solid #e9eff2;vertical-align:middle}
+.cafs-ik .matrix tbody tr:hover{background:#f5fafb}
+.cafs-ik .matrix button{border:0;background:none;text-align:left;color:#0a6e6d;font-size:12px;font-weight:750;padding:0}
+.cafs-ik .dot{display:inline-grid;place-items:center;width:24px;height:24px;background:#e3f5ef;border-radius:50%;color:#0c7e74;font-weight:800}
+.cafs-ik .nodot{color:#c5d1db}
+.cafs-ik .index-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.cafs-ik .index-card{background:#fff;border:1px solid var(--line);border-radius:13px;padding:16px}
+.cafs-ik .index-entry{border-bottom:1px solid #edf1f3;display:flex;gap:12px;padding:8px 0;font-size:12px}
+.cafs-ik .index-entry b{color:#0d837a;min-width:38px}
+.cafs-ik .index-entry span{color:#4e6779}
+.cafs-ik .dashboard{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.cafs-ik .dash-card{border-radius:13px;padding:20px;background:white;border:1px solid var(--line);text-align:left}
+.cafs-ik .dash-card h3{margin:9px 0}
+.cafs-ik .dash-card .big{font-size:26px;font-weight:850;color:#0c7f77}
+.cafs-ik .path{background:white;border:1px solid var(--line);border-radius:12px;padding:15px}
+.cafs-ik .pathhead{display:flex;justify-content:space-between;align-items:center}
+.cafs-ik .path h3{margin:2px 0}
+.cafs-ik .notice{font-size:12px;color:#647f91;margin:15px 0}
+.cafs-ik .vocab{display:grid;grid-template-columns:repeat(3,1fr);gap:11px}
+.cafs-ik .vocab>div{background:white;border:1px solid var(--line);border-radius:11px;padding:15px}
+.cafs-ik .vocab strong{color:#0a766c;font-size:12px}
+.cafs-ik .vocab p{font-size:12px}
+.cafs-ik .modal-info{background:#edf8f6;border-radius:10px;padding:14px}
+.cafs-ik .hide{display:none!important}
+.cafs-ik .diagram-step{border:1px solid #d7e7e7;background:white;border-radius:11px;padding:12px;flex:1;min-width:180px}
+.cafs-ik .diagram-step strong{display:block;color:#086e68}
+.cafs-ik .diagram-row{display:flex;gap:9px;flex-wrap:wrap;align-items:stretch}
+.cafs-ik .arrow{display:flex;align-items:center;justify-content:center;color:#0e887d;font-size:19px;font-weight:800}
+.cafs-ik .foot{padding:25px 0 50px;color:#7b8e9d;font-size:12px;text-align:center}
+.cafs-ik .floating-top{position:fixed;right:18px;bottom:17px;border-radius:50%;height:43px;width:43px;background:#164b62;color:white;border:0;box-shadow:0 4px 14px #213e4a36;font-size:18px}
+.cafs-ik .noresults{padding:20px;color:#6b8491;font-size:13px}
+.cafs-ik .print-only{display:none}
+@container (max-width:1020px){.cafs-ik .grid-lesson{grid-template-columns:265px 1fr}
+.cafs-ik .info-grid{grid-template-columns:1fr}
+.cafs-ik .dashboard{grid-template-columns:repeat(2,1fr)}
+.cafs-ik .index-grid{grid-template-columns:1fr}
+.cafs-ik .tabs{margin:14px 0}
+.cafs-ik .sidebar{top:77px}}
+@container (max-width:730px){.cafs-ik .wrap{padding:0 13px}
+.cafs-ik .head small{display:none}
+.cafs-ik .grid-lesson{grid-template-columns:1fr}
+.cafs-ik .sidebar{position:static;max-height:280px}
+.cafs-ik .sidebar .list{max-height:150px}
+.cafs-ik .panel{padding:16px}
+.cafs-ik .compact-columns,.cafs-ik .dashboard,.cafs-ik .vocab{grid-template-columns:1fr}
+.cafs-ik .stats{gap:6px}
+.cafs-ik .stat{min-width:100px;padding:9px 10px}
+.cafs-ik .stat strong{font-size:19px}
+.cafs-ik .stat span{font-size:10px}
+.cafs-ik .hero{padding:20px 0}
+.cafs-ik .tab{padding:8px 10px;font-size:12px}
+.cafs-ik .lesson-header h2{font-size:23px}
+.cafs-ik .matrix{font-size:11px}}
+@media print{.cafs-ik .head,.cafs-ik .hero,.cafs-ik .tabs,.cafs-ik .sidebar,.cafs-ik .foot,.cafs-ik .floating-top,.cafs-ik .btn,.cafs-ik .no-print,.cafs-ik .exam-controls,.cafs-ik .test-nav{display:none!important}
+.cafs-ik .page{display:none!important}
+.cafs-ik #lessons{display:block!important}
+.cafs-ik .grid-lesson{display:block}
+.cafs-ik .panel{border:none!important;box-shadow:none!important;padding:9px}
+.cafs-ik .question,.cafs-ik .case,.cafs-ik .note{break-inside:avoid}
+.cafs-ik .print-only{display:block}}
+.cafs-ik .head{display:none!important}.cafs-ik .sidebar{max-height:650px!important;top:0!important;position:relative}.cafs-ik{position:relative;overflow-x:hidden;}.cafs-ik .floating-top{position:absolute}.cafs-ik h3,.cafs-ik h4{letter-spacing:normal}.cafs-ik h4{font-size:1em}.cafs22-embed:has(>.cafs-ik){container-type:inline-size}
+
+/* neutralise generic studio.css rules (.hero, ...) that would leak into the module */
+.cafs-ik .hero{display:block;position:static;color:var(--text);border-radius:0;grid-template-columns:none;overflow:visible;box-shadow:none}
+.cafs-ik .hero::before,.cafs-ik .hero::after{content:none}
+.cafs-ik .tabs{background:none;padding:0;border:0;border-radius:0;box-shadow:none;width:auto}
+.cafs-ik h2{margin-top:.83em}.cafs-ik h3{margin-top:1em}
+.cafs-ik .btn{display:inline-block}
+.cafs-ik .sidebar{width:auto;color:var(--text);height:auto;left:auto;bottom:auto;border-right:0;overflow:visible;min-height:0;transform:none}

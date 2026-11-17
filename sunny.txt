@@ -1,0 +1,197 @@
+SUNNY - ami (Claude) ei project e ki ki korechi
+Project: C:\wamp64\www\cafs-study-studio-frontend
+=====================================================================
+
+SHONKHEP
+--------
+/studio ekhon React page (section 11). Purono iframe version /studio/legacy e ache.
+Tomar HTML file ami change kori nai. Section 1-9 er patching code (studioData/studioState)
+legacy page ar data/state API er jonno ekhono lage.
+
+
+1. HEADER BUTTON FIX (look hubohu original er moto)
+---------------------------------------------------
+Somossha: Backend HTML er header e (.top-actions) nijer Admin / Sign out button dhukiye dito,
+tai header bhenge jachilo.
+Kaj:
+  - app/studio/page.tsx
+      * Backend er injected <script id="cafs-account-controls"> bad dei (regex diye).
+      * Admin (shudhu admin hole) ar Sign out button iframe er baire floating button hishebe.
+      * isAdmin useSyncExternalStore diye pora hoy (lint fix).
+  - app/globals.css : file er sheshe .studio-account ar .studio-account button style.
+Backend ami chhuyi nai (tar test oi script expect kore).
+
+
+2. CONTENT DYNAMIC (JSON theke data)
+-------------------------------------
+HTML er bhitorer hardcoded data JSON file e ber kore, frontend fetch kore HTML e boshay.
+  - lib/studioData.ts   (main file, pure logic, kono Next/browser import nai)
+      STUDIO_DATASETS : HTML er kon constant kon JSON key (17ta)
+      STUDIO_TEXT     : text list gulo (copy, copyLaws, copyIk, ui, uiLaws, uiIk, tpl)
+      extractDataset / extractText : HTML theke data/text ber kore
+      injectDatasets  : main entry. data, text, count boshay, embedded app e data dey
+      COUNTS / fillCounts : text er number data theke calculate (niche dekho)
+      SOURCES helper  : base64 embedded app (Laws, Integrated Knowledge) decode -> data bosay -> encode
+  - lib/studioFetch.ts : /data/{key}.json theke shob (24ta) fetch kore
+  - public/data/*.json (24ta file):
+      Data (17): bank, exams, kit, handbook, cases, summaries, redFlags, studyFacts, studySheets,
+                 tasks, traps, typeSpec, lawSpec, lawsList, lawsQuiz, ikData, ikChapters
+      Text (7) : copy, copyLaws, copyIk  (description paragraph: 91 + 6 + 10)
+                 ui, uiLaws, uiIk        (UI text: nav, heading, button, label...: 455 + 43 + 104)
+                 tpl                     (question template: 8)
+  - Data URL change korte: .env.local e NEXT_PUBLIC_STUDIO_DATA_URL (default "/data")
+  - Kono file load na hole HTML er embedded copy diye cholbe (kichu bhangbe na).
+
+
+3. TEXT DYNAMIC (description, UI text, question template)
+---------------------------------------------------------
+  - Description paragraph: shob plain-text <p>...</p> ar desc:'...'.
+  - UI text: h1-h6, button, label, th, td, li, summary, strong, span, div ityadi leaf element er text;
+    nav list, mkBtn(...), go(...), statCard(...) ar "key:'Capitalised phrase'" label.
+  - Question template: quiz generator er stem text ("Identify the fraud concept described: ",
+    " (Select TWO.)", "Which term best fits this description? ", "Correct: " ityadi) - 8ta.
+  - Ekoi text jotogulo jaygay ache (jemon "CAFS Study Studio") list e ekbar thake;
+    ekta edit korle shob jaygay bodlay (live test korechi: 3 jaygay bodle gelo).
+  - Edit kora text e quote (' " ` ${}) thakleo page bhange na (HTML ar JS string alada escape hoy).
+    Edit korle main script gulo ekhono parse hoy (test korechi).
+  - Je text e ${...} placeholder ache (code diye toiri hoy) seta list e nai.
+
+
+4. COUNT / EDITORIAL NUMBER DATA THEKE CALCULATE
+-------------------------------------------------
+Data change korle ei number gulo auto bodlay, same data te same thake:
+  580 questions (bank), 400 added mock questions, 319 fraud indicators, 19 laws, 12 exam checks,
+  54 topics, 120 integrated questions,
+  117 rewritten questions (exam version "18.0-domain12-rewrite"),
+  116 provisional items, 161 form replacements, 400 imported practice, 30 pilot-reviewed
+  (exam question er reviewStatus/version field theke).
+Calculate hoy na (data te nai): "570 items ... 264 retained / 250 existing / 56 newly" er line.
+
+
+5. USER KAJ API TE (localStorage replace)
+------------------------------------------
+Studio er shob save (answer, flag, exam session/history, timer, drill, saves, theme) localStorage e
+chhilo. Ekhon API te jay.
+  - lib/studioState.ts
+      fetchStudioState : API theke state ane. Prothom bar purono localStorage (cafs_*) API te migrate kore.
+      stateShim / withStateShim : iframe er window.localStorage replace kore. 300ms debounce kore PUT kore.
+  - app/api/studio/state/route.ts   (MOCK backend, Laravel er jaygay)
+      GET  -> { state: {key: "string"} }
+      PUT  <- { set: {key: "string" | null} }   (null = delete)
+      Data .studio-state/ folder e user token er hash diye JSON file e thake.
+  - .gitignore : /.studio-state add kora
+  - Embedded app (Laws, Integrated Knowledge) parent er localStorage share kore.
+  - State URL change korte: NEXT_PUBLIC_STUDIO_STATE_URL (default "/api/studio/state")
+
+
+6. DATA ABAR BANANOR SCRIPT
+----------------------------
+  - scripts/extract-studio-data.mjs  +  package.json e "studio:extract"
+      npm run studio:extract -- "C:/Users/HP/Downloads/CAFS_Study_Studio_v22_Integrated.html"
+    HTML theke 24ta JSON abar generate kore, roundtrip check kore ("roundtrip OK").
+    HTML update hole eta chalaw.
+
+
+7. ERROR / LINT FIX
+--------------------
+  - app/studio/page.tsx : contentWindow type error fix
+  - app/studio/page.tsx ar app/admin/page.tsx : "setState inside effect" lint error fix
+    (useSyncExternalStore diye)
+  - lib/studioData.ts : unused variable remove
+  Ekhon: npx tsc --noEmit clean, npx eslint app lib scripts clean.
+
+
+8. LARAVEL DOC
+--------------
+  - docs/LARAVEL_ENDPOINTS.md
+      26ta endpoint er input/output (24 GET /api/studio/data/{key}.json + GET/PUT /api/studio/state),
+      route/controller sample, .env.local, CORS, key list shoho.
+  (Backend nijer kaj tumi bolechho korte hobe na, tai ami backend chhuyi nai.)
+
+
+9. KI KI TEST KORECHI (browser e + script e)
+---------------------------------------------
+  - Shob 20ta page click kore dekhechi: content ashe, JS error nai, undefined/NaN nai,
+    content length ager moto hubohu same. 24ta JSON file shob 200.
+  - Theme save API te jay, reload e thake.
+  - Mock exam khule answer, submit korlam: result page ashlo, state save holo.
+  - Integrated Knowledge er save API te gelo ar delete holo.
+  - Admin page ar studio er Admin button kaj kore.
+  - Live edit: ui.json edit korle page e bodlay (3 jaygay), tarpor revert korechi.
+  - Roundtrip (HTML -> extract -> inject -> extract) same; edit korle script parse error 0.
+  - Test data muche diyechi.
+
+
+10. JA KORI NAI (sotti kotha)
+------------------------------
+  - HTML file nijer edit kori nai (React rewrite er info niche 11 e). Purono iframe: /studio/legacy.
+  - Laravel backend chhuyi nai (tumi bolechho). .env.local banai nai (backend chhara URL swap kaj korbe na),
+    tai ekhon public/data JSON + mock API cholche.
+  - git commit kori nai (tumi bolechho korte hobe na).
+  - Je text ${...} diye code e toiri hoy seta list e nai.
+  - "570 items / 264 / 250 / 56" er editorial line data theke calculate hoy na.
+
+
+NOTUN / CHANGE HOWA FILE
+-------------------------
+  Changed : .gitignore, app/globals.css, app/studio/page.tsx, app/admin/page.tsx, package.json
+  New     : app/api/studio/state/route.ts, lib/studioData.ts, lib/studioFetch.ts, lib/studioState.ts,
+            scripts/extract-studio-data.mjs, public/data/*.json (24ta),
+            docs/LARAVEL_ENDPOINTS.md, sunny.txt
+
+
+CHALANOR NIYOM
+--------------
+  npm run dev        -> http://localhost:3000/studio
+  Laravel ready hole .env.local e:
+    NEXT_PUBLIC_STUDIO_DATA_URL=http://localhost:8000/api/studio/data
+    NEXT_PUBLIC_STUDIO_STATE_URL=http://localhost:8000/api/studio/state
+  tarpor npm run dev restart.
+
+=====================================================================
+11. REACT REWRITE (/studio ekhon shotti React page)  <<< SOBCHEYE BORO KAJ
+=====================================================================
+/studio ar /studio/<page> ekhon Next.js React page. Iframe nai. Purono iframe version
+/studio/legacy e ache (compare korar jonno, delete korle o hobe).
+
+Structure:
+  app/(site)/...                     login, register, admin, invite, home (Tailwind global css)
+  app/(studio)/layout.tsx            studio er alada root layout (studio.css, Tailwind chhara)
+  app/(studio)/studio/studio.css     original HTML er 15ta <style> block (same order)
+  app/(studio)/studio/(app)/layout.tsx   StudioProvider + Shell
+  app/(studio)/studio/(app)/<page>/page.tsx   20ta page route + exam/[id], results/[id], drill
+  app/(studio)/studio/legacy/page.tsx    purono iframe version
+  components/studio/Shell.tsx        sidebar, brand, nav, progress, topbar, theme, text size
+  components/studio/LicenseBar.tsx   Licensed to + License & Share dialog
+  components/studio/pages/*.tsx      20ta page component
+  components/studio/exam/**          exam workspace, results, start dialog
+  components/studio/dashboard/**     overview card/tile/quickbar
+  components/studio/practice/**      insights helper, drill, backup/restore
+  components/studio/study/**         exam coach, go button
+  components/studio/library/**       case/summary/red flag/advanced bank helpers
+  components/studio/adaptive/**      adaptive path logic + dashboard card
+  components/studio/kit/**           flashcards, quiz engine, typology library
+  components/studio/modules/**       Laws + Integrated Knowledge (native, css scoped)
+  lib/studio/                        StudioProvider (data+labels+state), store (API-backed),
+                                     engine (exam/stats/archive), db hooks, nav, Icon, types
+  public/data/labels.json            UI text (t("key","text") call theke generate: npm run studio:labels)
+  docs/REACT_PORT.md                 port guide, docs/studio-compare.js compare snippet
+
+Data/state: content = useStudioData() (public/data JSON ba Laravel), user kaj = store hooks
+(same cafs_* key, API te sync). UI text = t("key","default") -> labels.json.
+
+Scripts: npm run studio:extract (data JSON), studio:assets (css + logo), studio:labels (labels.json)
+
+Verification (ami korechi): shob 20 page React vs legacy side by side, visible text:
+  18ta page character-by-character same (overview te sudhu v18 notice er pori: fresh load e dui e dekhay),
+  laws ar integratedKnowledge content same (legacy te iframe text alada order e).
+  Exam run (answer, flag, submit, results, review, retake), quiz/flashcard, sprints, drill, filters test kora hoyeche.
+  tsc + eslint clean. Test state shob restore kora.
+
+Chhoto parthokyo / jani:
+  - Next dev er "instant navigation" error silence korte shob page.tsx e  export const instant = false  dewa.
+  - Library/Sprints filter state ekhon page e thake (Next Activity), original e global var chhilo.
+  - "Mark reviewed" e original page re-render hoye <details> bondho hoto, React e khola thake.
+  - Laws page er "9 Core / 7 Important / 3 Contextual" original er hardcoded text rakha (data te 9/6/4).
+  - Timer expiry, CSV/backup export-restore, "Clear all progress", Sprints timer manually test kora hoy ni.
+  - Adaptive agent "Create attributed invitation link" ekbar click korechhilo: backend e ekta invitation row hote pare.

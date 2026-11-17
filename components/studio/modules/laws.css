@@ -1,0 +1,66 @@
+.cafs-laws{--bg:#f7f5fb; --surface:#ffffff; --ink:#211a2b; --muted:#6c6475;
+  --purple:#6f3cc3; --purple2:#8b5dd4; --line:#e5def0; --soft:#f0eafb;
+  --green:#1e7a5c; --amber:#9a6514; --red:#a44242; --shadow:0 10px 30px rgba(52,31,86,.08);}
+.cafs-laws *{box-sizing:border-box}
+.cafs-laws{margin:0;background:linear-gradient(180deg,#fbf9fd 0,#f6f2fa 100%);color:var(--ink);font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+.cafs-laws header{background:linear-gradient(135deg,#fff 0,#f5effc 100%);border-bottom:1px solid var(--line)}
+.cafs-laws .wrap{max-width:1180px;margin:auto;padding:28px 22px}
+.cafs-laws h1{font-size:clamp(2rem,4cqw,3.25rem);line-height:1.08;margin:.2rem 0 .8rem}
+.cafs-laws h2{margin-top:2.2rem}
+.cafs-laws p{margin:.5rem 0}
+.cafs-laws .badge{display:inline-flex;align-items:center;gap:.4rem;border:1px solid var(--line);background:#fff;border-radius:999px;padding:.35rem .7rem;font-size:.84rem;font-weight:700}
+.cafs-laws .hero-grid{display:grid;grid-template-columns:1.5fr .7fr;gap:18px;align-items:stretch}
+.cafs-laws .hero-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:var(--shadow)}
+.cafs-laws .stat{font-size:2.2rem;font-weight:800;color:var(--purple)}
+.cafs-laws .note{border-left:4px solid var(--purple);background:var(--soft);padding:12px 15px;border-radius:8px;margin-top:16px}
+.cafs-laws .controls{position:sticky;top:0;z-index:5;background:rgba(247,245,251,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding:12px 0}
+.cafs-laws .control-grid{display:grid;grid-template-columns:2fr 1fr 1fr auto;gap:10px}
+.cafs-laws input,.cafs-laws select,.cafs-laws button{font:inherit}
+.cafs-laws input,.cafs-laws select{width:100%;border:1px solid var(--line);background:#fff;border-radius:10px;padding:10px 12px;color:var(--ink)}
+.cafs-laws button{border:0;border-radius:10px;padding:10px 13px;background:var(--purple);color:#fff;font-weight:750;cursor:pointer}
+.cafs-laws button.secondary{background:#fff;color:var(--purple);border:1px solid var(--line)}
+.cafs-laws button:hover{filter:brightness(.97)}
+.cafs-laws .cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:18px}
+.cafs-laws .law-card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:0;box-shadow:var(--shadow);overflow:hidden}
+.cafs-laws .law-card summary{list-style:none;cursor:pointer;padding:17px 18px;display:flex;justify-content:space-between;gap:14px;align-items:flex-start}
+.cafs-laws .law-card summary::-webkit-details-marker{display:none}
+.cafs-laws .law-title{font-size:1.08rem;font-weight:850}
+.cafs-laws .meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:7px}
+.cafs-laws .tag{font-size:.76rem;font-weight:750;border-radius:999px;padding:.22rem .55rem;background:#f3eef9;color:#65419b}
+.cafs-laws .tag.core{background:#e9f6f1;color:var(--green)}
+.cafs-laws .tag.important{background:#fff2db;color:var(--amber)}
+.cafs-laws .tag.contextual{background:#f4e7e7;color:var(--red)}
+.cafs-laws .chev{font-size:1.25rem;color:var(--purple);transition:.2s}
+.cafs-laws details[open] .chev{transform:rotate(45deg)}
+.cafs-laws .content{border-top:1px solid var(--line);padding:15px 18px 18px}
+.cafs-laws .content h4{margin:.9rem 0 .25rem;color:var(--purple)}
+.cafs-laws .source{font-size:.9rem;color:var(--muted)}
+.cafs-laws .matrix{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}
+.cafs-laws .matrix th,.cafs-laws .matrix td{text-align:left;vertical-align:top;border-bottom:1px solid var(--line);padding:11px 12px}
+.cafs-laws .matrix th{background:#f3eef9}
+.cafs-laws .numbers{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.cafs-laws .num-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:15px;box-shadow:var(--shadow)}
+.cafs-laws .num{font-size:1.6rem;font-weight:900;color:var(--purple)}
+.cafs-laws .quiz{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:var(--shadow)}
+.cafs-laws .q{padding:14px 0;border-bottom:1px solid var(--line)}
+.cafs-laws .q:last-child{border-bottom:0}
+.cafs-laws .option{display:block;border:1px solid var(--line);border-radius:10px;padding:9px 11px;margin:7px 0;cursor:pointer}
+.cafs-laws .option:hover{background:#faf8fc}
+.cafs-laws .feedback{display:none;margin-top:8px;padding:10px;border-radius:9px}
+.cafs-laws .feedback.ok{display:block;background:#e9f6f1;color:#145c45}
+.cafs-laws .feedback.no{display:block;background:#f8eaea;color:#813838}
+.cafs-laws .score{font-size:1.2rem;font-weight:850;margin:14px 0}
+.cafs-laws .footer{color:var(--muted);font-size:.9rem;text-align:center;padding:30px 0}
+.cafs-laws .hidden{display:none!important}
+@container (max-width:800px){.cafs-laws .hero-grid,.cafs-laws .cards,.cafs-laws .numbers,.cafs-laws .control-grid{grid-template-columns:1fr}
+.cafs-laws .controls{position:static}}
+@media print{.cafs-laws .controls,.cafs-laws .quiz-actions{display:none!important}
+.cafs-laws .cards{grid-template-columns:1fr}
+.cafs-laws details{break-inside:avoid}
+.cafs-laws details .content{display:block!important}
+.cafs-laws{background:#fff}}
+.cafs-laws .controls{position:relative}
+.cafs-laws{position:relative;container-type:inline-size}
+.cafs-laws h1,.cafs-laws h2,.cafs-laws h3,.cafs-laws h4{letter-spacing:normal}.cafs-laws h2{font-size:1.5em}.cafs-laws h3{font-size:1.17em}
+/* neutralise generic studio.css rules that would leak into the module */
+.cafs-laws .tag{border:0;letter-spacing:normal}.cafs-laws label.option{background:none}.cafs-laws input[type=radio]{margin:3px 3px 0 5px;height:13px;min-height:0}.cafs-laws .footer{margin:0;border:0}
