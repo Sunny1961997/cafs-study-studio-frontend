@@ -86,7 +86,10 @@ export default function LoginPage() {
             <span className="monogram" aria-hidden="true">FCL</span> FCL Academy
           </a>
         </div>
-        <Link href="/cafs">‹ Back to Course</Link>
+        <div className="head-actions">
+          <Link href="/register" className="head-register">Registration</Link>
+          <Link href="/cafs">‹ Back to Course</Link>
+        </div>
       </header>
       <main className="shell">
         <aside className="story" aria-label="CAFS Study Studio slideshow">

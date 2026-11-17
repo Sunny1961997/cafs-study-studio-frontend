@@ -32,8 +32,10 @@ export function CafsShell({ active, children }: { active?: "curriculum" | "plans
                 {nav.map((n) => (
                   <Link key={n.key} href={n.href}>{n.label}</Link>
                 ))}
+                <Link href="/register">Registration</Link>
               </div>
             </details>
+            <Link href="/register" className={`${"cafs-btn"} ${"cafs-primary"}`}>Registration</Link>
             <Link href={hrefs.studentLogin} className={`${"cafs-btn"} ${"cafs-secondary"}`}>Student Login ↗</Link>
           </div>
         </div>
